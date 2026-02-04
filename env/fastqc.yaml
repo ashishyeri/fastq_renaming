@@ -1,0 +1,7 @@
+# Optional Conda env for FastQC. Nextflow can use: conda env/fastqc.yaml
+name: fastqc
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - fastqc

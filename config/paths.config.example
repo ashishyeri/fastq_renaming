@@ -1,0 +1,16 @@
+// Copy to paths.config and set FASTQ_PIPELINE_ROOT, or run scripts/setup_dirs.sh
+// to generate paths.config and install_paths.env from FASTQ_PIPELINE_ROOT.
+
+params {
+    storage_root = System.getenv('FASTQ_PIPELINE_ROOT') ?: "${projectDir}/storage"
+    work_dir = "${params.storage_root}/work"
+    large_files_dir = "${params.storage_root}/large_files"
+    merged_fastq_dir = "${params.storage_root}/large_files/merged_fastq"
+    publish_fastqc_dir = "${params.storage_root}/large_files/fastqc"
+    conda_cache_dir = "${params.storage_root}/conda_env"
+    conda_packages_dir = "${params.storage_root}/conda_packages"
+    tmp_dir = "${params.storage_root}/tmp"
+}
+
+workDir = params.work_dir
+conda.cacheDir = params.conda_cache_dir

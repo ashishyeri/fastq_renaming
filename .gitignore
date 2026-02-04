@@ -1,0 +1,35 @@
+# Nextflow
+work/
+.nextflow/
+.nextflow.log*
+trace*.html
+trace*.json
+timeline*.html
+report*.html
+
+# Pipeline storage (user path) – do not commit
+# config/paths.config and config/install_paths.env are machine-specific
+config/paths.config
+config/install_paths.env
+
+# Python / uv
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+uv.lock
+
+# IDE / OS
+.idea/
+.vscode/
+.DS_Store
+*.swp
+*~
+
+# Test / run outputs (optional)
+large_files/
+*.fastq
+*.fastq.gz
+!tests/testdata/*.fastq.gz

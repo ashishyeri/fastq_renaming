@@ -1,0 +1,23 @@
+[project]
+name = "fastq-naming"
+version = "0.1.0"
+description = "Nextflow FASTQ pipeline: sample name extraction, lane merge, FastQC. Project tooling and tests."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "pytest>=7.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+]
+
+[tool.uv]
+dev-dependencies = [
+    "pytest>=7.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
