@@ -1,4 +1,4 @@
-# Nextflow FASTQ pipeline
+# Nextflow FASTQ pipeline by Ashish Yeri Feb 4th2026
 
 Pipeline that (1) extracts sample names from FASTQ filenames (multiple conventions), (2) merges FASTQs from multiple lanes per sample, and (3) runs FastQC. Uses a user-provided parent path for all large files, work dir, and Conda/uv caches.
 
