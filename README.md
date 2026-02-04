@@ -26,12 +26,13 @@ Set `SKIP_INSTALLS=1` when running `setup_dirs.sh` to only create dirs and write
    ```bash
    source config/install_paths.env
    ```
-   Optional: add that line to `~/.bashrc`. Verify: `which conda`, `which uv`, `which nextflow`.
+   This also sets `UV_PROJECT_ENVIRONMENT` so the project venv is created in your storage path (e.g. `$FASTQ_PIPELINE_ROOT/.venv`), not in the project dir. Optional: add the `source` line to `~/.bashrc`. Verify: `which conda`, `which uv`, `which nextflow`.
 
 3. **Install project (uv) dependencies**
    ```bash
    uv sync
    ```
+   The virtual environment is created at `$FASTQ_PIPELINE_ROOT/.venv` (or `$ROOT/.venv`) when you have sourced `config/install_paths.env`.
 
 4. **Test run**
    ```bash
