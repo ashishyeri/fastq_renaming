@@ -4,19 +4,23 @@ Pipeline that (1) extracts sample names from FASTQ filenames (multiple conventio
 
 ## Prerequisites
 
-- **Java 17+:** `java -version`
-- **Conda or Miniconda:** for FastQC; `conda` on PATH
-- **uv:** [Install](https://docs.astral.sh/uv/getting-started/installation/) — e.g. `curl -LsSf https://astral.sh/uv/install.sh | sh`
-- **Nextflow:** `curl -s https://get.nextflow.io | bash` (or Conda); Java 17+ required
+The setup script can install these for you under `FASTQ_PIPELINE_ROOT` (see Quick start). Or install manually:
+
+- **Java 17+:** `java -version` (macOS: `brew install openjdk@17`; Linux: e.g. `apt-get install openjdk-17-jdk`)
+- **Conda or Miniconda:** for FastQC; script can install Miniconda to `$ROOT/miniconda3`
+- **uv:** [Install](https://docs.astral.sh/uv/getting-started/installation/) — script can install to `$ROOT/bin`
+- **Nextflow:** script can install to `$ROOT/bin` (requires Java 17+)
+
+Set `SKIP_INSTALLS=1` when running `setup_dirs.sh` to only create dirs and write config (use your existing tools).
 
 ## Quick start
 
-1. **Set storage path and run setup**
+1. **Set storage path and run setup (creates dirs and installs prerequisites)**
    ```bash
    export FASTQ_PIPELINE_ROOT=/path/to/your/storage
    ./scripts/setup_dirs.sh
    ```
-   This creates `large_files`, `work`, `conda_env`, `conda_packages`, `tmp` under that path and writes `config/paths.config` and `config/install_paths.env`.
+   This creates `large_files`, `work`, `conda_env`, `conda_packages`, `tmp`, `bin` under that path; installs uv, Miniconda, and Nextflow (and attempts Java on macOS/Linux); and writes `config/paths.config` and `config/install_paths.env`.
 
 2. **Source install paths (so conda, uv, nextflow are on PATH from anywhere)**
    ```bash
