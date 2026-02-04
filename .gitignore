@@ -33,3 +33,10 @@ large_files/
 *.fastq
 *.fastq.gz
 !tests/testdata/*.fastq.gz
+
+
+# Code Ocean capsule–specific (do not commit)
+.codeocean/
+code/
+environment/
+nextflow
